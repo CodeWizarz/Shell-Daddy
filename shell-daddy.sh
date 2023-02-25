@@ -13,8 +13,8 @@ daddy() (
   COLORS_FAINT='\e[2m'
   COLORS_RESET='\e[0m'
 
-  DEF_WORDS_LITTLE="girl"
-  DEF_WORDS_PRONOUNS="her"
+  DEF_WORDS_LITTLE="boy"
+  DEF_WORDS_PRONOUNS="him"
   DEF_WORDS_ROLES="daddy"
   DEF_daddy_COLOR="${COLORS_LIGHT_PINK}"
   DEF_ONLY_NEGATIVE="false"
