@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# sudofox/shell-mommy.sh
+# sudofox/shell-daddy.sh
 
-mommy() (
-  MOMMY_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+daddy() (
+  daddy_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-  # SHELL_MOMMYS_LITTLE - what to call you~ (default: "girl")
-  # SHELL_MOMMYS_PRONOUNS - what pronouns mommy will use for themself~ (default: "her")
-  # SHELL_MOMMYS_ROLES - what role mommy will have~ (default "mommy")
+  # SHELL_daddyS_LITTLE - what to call you~ (default: "girl")
+  # SHELL_daddyS_PRONOUNS - what pronouns daddy will use for themself~ (default: "her")
+  # SHELL_daddyS_ROLES - what role daddy will have~ (default "daddy")
 
   COLORS_LIGHT_PINK='\e[38;5;217m'
   COLORS_LIGHT_BLUE='\e[38;5;117m'
@@ -15,45 +15,45 @@ mommy() (
 
   DEF_WORDS_LITTLE="girl"
   DEF_WORDS_PRONOUNS="her"
-  DEF_WORDS_ROLES="mommy"
-  DEF_MOMMY_COLOR="${COLORS_LIGHT_PINK}"
+  DEF_WORDS_ROLES="daddy"
+  DEF_daddy_COLOR="${COLORS_LIGHT_PINK}"
   DEF_ONLY_NEGATIVE="false"
 
   NEGATIVE_RESPONSES=(
-    "do you need MOMMYS_ROLE's help~? ❤️"
+    "do you need daddyS_ROLE's help~? ❤️"
     "Don't give up, my love~ ❤️"
-    "Don't worry, MOMMYS_ROLE is here to help you~ ❤️"
+    "Don't worry, daddyS_ROLE is here to help you~ ❤️"
     "I believe in you, my sweet AFFECTIONATE_TERM~ ❤️"
     "It's okay to make mistakes, my dear~ ❤️"
     "just a little further, sweetie~ ❤️"
     "Let's try again together, okay~? ❤️"
-    "MOMMYS_ROLE believes in you, and knows you can overcome this~ ❤️"
-    "MOMMYS_ROLE believes in you~ ❤️"
-    "MOMMYS_ROLE is always here for you, no matter what~ ❤️"
-    "MOMMYS_ROLE is here to help you through it~ ❤️"
-    "MOMMYS_ROLE is proud of you for trying, no matter what the outcome~ ❤️"
-    "MOMMYS_ROLE knows it's tough, but you can do it~ ❤️"
-    "MOMMYS_ROLE knows MOMMYS_PRONOUN little AFFECTIONATE_TERM can do better~ ❤️"
-    "MOMMYS_ROLE knows you can do it, even if it's tough~ ❤️"
-    "MOMMYS_ROLE knows you're feeling down, but you'll get through it~ ❤️"
-    "MOMMYS_ROLE knows you're trying your best~ ❤️"
-    "MOMMYS_ROLE loves you, and is here to support you~ ❤️"
-    "MOMMYS_ROLE still loves you no matter what~ ❤️"
-    "You're doing your best, and that's all that matters to MOMMYS_ROLE~ ❤️"
-    "MOMMYS_ROLE is always here to encourage you~ ❤️"
+    "daddyS_ROLE believes in you, and knows you can overcome this~ ❤️"
+    "daddyS_ROLE believes in you~ ❤️"
+    "daddyS_ROLE is always here for you, no matter what~ ❤️"
+    "daddyS_ROLE is here to help you through it~ ❤️"
+    "daddyS_ROLE is proud of you for trying, no matter what the outcome~ ❤️"
+    "daddyS_ROLE knows it's tough, but you can do it~ ❤️"
+    "daddyS_ROLE knows daddyS_PRONOUN little AFFECTIONATE_TERM can do better~ ❤️"
+    "daddyS_ROLE knows you can do it, even if it's tough~ ❤️"
+    "daddyS_ROLE knows you're feeling down, but you'll get through it~ ❤️"
+    "daddyS_ROLE knows you're trying your best~ ❤️"
+    "daddyS_ROLE loves you, and is here to support you~ ❤️"
+    "daddyS_ROLE still loves you no matter what~ ❤️"
+    "You're doing your best, and that's all that matters to daddyS_ROLE~ ❤️"
+    "daddyS_ROLE is always here to encourage you~ ❤️"
   )
 
   POSITIVE_RESPONSES=(
     "*pets your head*"
-    "awe, what a good AFFECTIONATE_TERM~\nMOMMYS_ROLE knew you could do it~ ❤️"
-    "good AFFECTIONATE_TERM~\nMOMMYS_ROLE's so proud of you~ ❤️"
+    "awe, what a good AFFECTIONATE_TERM~\ndaddyS_ROLE knew you could do it~ ❤️"
+    "good AFFECTIONATE_TERM~\ndaddyS_ROLE's so proud of you~ ❤️"
     "Keep up the good work, my love~ ❤️"
-    "MOMMYS_ROLE is proud of the progress you've made~ ❤️"
-    "MOMMYS_ROLE is so grateful to have you as MOMMYS_PRONOUN little AFFECTIONATE_TERM~ ❤️"
+    "daddyS_ROLE is proud of the progress you've made~ ❤️"
+    "daddyS_ROLE is so grateful to have you as daddyS_PRONOUN little AFFECTIONATE_TERM~ ❤️"
     "I'm so proud of you, my love~ ❤️"
-    "MOMMYS_ROLE is so proud of you~ ❤️"
-    "MOMMYS_ROLE loves seeing MOMMYS_PRONOUN little AFFECTIONATE_TERM succeed~ ❤️"
-    "MOMMYS_ROLE thinks MOMMYS_PRONOUN little AFFECTIONATE_TERM earned a big hug~ ❤️"
+    "daddyS_ROLE is so proud of you~ ❤️"
+    "daddyS_ROLE loves seeing daddyS_PRONOUN little AFFECTIONATE_TERM succeed~ ❤️"
+    "daddyS_ROLE thinks daddyS_PRONOUN little AFFECTIONATE_TERM earned a big hug~ ❤️"
     "that's a good AFFECTIONATE_TERM~ ❤️"
     "you did an amazing job, my dear~ ❤️"
     "you're such a smart cookie~ ❤️"
@@ -61,28 +61,28 @@ mommy() (
 
   # allow for overriding of default words (IF ANY SET)
 
-  if [[ -n "${SHELL_MOMMYS_LITTLE:-}" ]]; then
-    DEF_WORDS_LITTLE="${SHELL_MOMMYS_LITTLE}"
+  if [[ -n "${SHELL_daddyS_LITTLE:-}" ]]; then
+    DEF_WORDS_LITTLE="${SHELL_daddyS_LITTLE}"
   fi
-  if [[ -n "${SHELL_MOMMYS_PRONOUNS:-}" ]]; then
-    DEF_WORDS_PRONOUNS="${SHELL_MOMMYS_PRONOUNS}"
+  if [[ -n "${SHELL_daddyS_PRONOUNS:-}" ]]; then
+    DEF_WORDS_PRONOUNS="${SHELL_daddyS_PRONOUNS}"
   fi
-  if [[ -n "${SHELL_MOMMYS_ROLES:-}" ]]; then
-    DEF_WORDS_ROLES="${SHELL_MOMMYS_ROLES}"
+  if [[ -n "${SHELL_daddyS_ROLES:-}" ]]; then
+    DEF_WORDS_ROLES="${SHELL_daddyS_ROLES}"
   fi
-  if [[ -n "${SHELL_MOMMYS_COLOR:-}" ]]; then
-    DEF_MOMMY_COLOR="${SHELL_MOMMYS_COLOR}"
+  if [[ -n "${SHELL_daddyS_COLOR:-}" ]]; then
+    DEF_daddy_COLOR="${SHELL_daddyS_COLOR}"
   fi
   # allow overriding to true
-  if [[ "${SHELL_MOMMYS_ONLY_NEGATIVE:-}" == "true" ]]; then
+  if [[ "${SHELL_daddyS_ONLY_NEGATIVE:-}" == "true" ]]; then
     DEF_ONLY_NEGATIVE="true"
   fi
   # if the array is set for positive/negative responses, overwrite it
-  if [[ -n "${SHELL_MOMMYS_POSITIVE_RESPONSES:-}" ]]; then
-    POSITIVE_RESPONSES=("${SHELL_MOMMYS_POSITIVE_RESPONSES[@]}")
+  if [[ -n "${SHELL_daddyS_POSITIVE_RESPONSES:-}" ]]; then
+    POSITIVE_RESPONSES=("${SHELL_daddyS_POSITIVE_RESPONSES[@]}")
   fi
-  if [[ -n "${SHELL_MOMMYS_NEGATIVE_RESPONSES:-}" ]]; then
-    NEGATIVE_RESPONSES=("${SHELL_MOMMYS_NEGATIVE_RESPONSES[@]}")
+  if [[ -n "${SHELL_daddyS_NEGATIVE_RESPONSES:-}" ]]; then
+    NEGATIVE_RESPONSES=("${SHELL_daddyS_NEGATIVE_RESPONSES[@]}")
   fi
   
   # split a string on forward slashes and return a random element
@@ -118,11 +118,11 @@ mommy() (
     local role="$(pick_word "${DEF_WORDS_ROLES}")"
     # sub in the terms, store in variable
     local response="$(echo "${response//AFFECTIONATE_TERM/$affectionate_term}")"
-    local response="$(echo "${response//MOMMYS_PRONOUN/$pronoun}")"
-    local response="$(echo "${response//MOMMYS_ROLE/$role}")"
+    local response="$(echo "${response//daddyS_PRONOUN/$pronoun}")"
+    local response="$(echo "${response//daddyS_ROLE/$role}")"
     # we have string literal newlines in the response, so we need to printf it out
     # print faint and colorcode
-    echo -e "${DEF_MOMMY_COLOR}$response${COLORS_RESET}"
+    echo -e "${DEF_daddy_COLOR}$response${COLORS_RESET}"
   }
 
   success() {
