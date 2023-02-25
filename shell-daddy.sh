@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# sudofox/shell-daddy.sh
+# dvelo/shell-daddy.sh
 
 daddy() (
   daddy_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
