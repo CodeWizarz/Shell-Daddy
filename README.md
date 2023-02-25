@@ -1,12 +1,12 @@
-# sudofox/shell-daddy
+# codewizz/shell-daddy
 
 Inspired by [Gankra/cargo-daddy](https://github.com/Gankra/cargo-daddy)
 
 This is a shell script that provides a `daddy` function which emulates a nurturing and supportive figure. The `daddy` function can be used to offer praise and encouraging responses to a user's actions, depending on the exit status of the command that is passed to it.
 
-By default, the text will be output in a light pink to stderr. You can change this to a light blue if you find that more encouraging.
+By default, the text will be output in a light blur to stderr. You can change this to a light pink if you find that more encouraging.
 
-<img src="preview.png" alt="Example" ></a>
+<!-- <img src="preview.png" alt="Example" ></a> -->
 
 
 I hope this will serve to improve the efficiency of your workflow and general mental health. Please use responsibly.
@@ -14,6 +14,11 @@ I hope this will serve to improve the efficiency of your workflow and general me
 ## Installation
 
 To use the `daddy` function, you can source the `shell-daddy.sh` script in your current shell or add it to your `~/.bashrc` file to have it available every time you open a new terminal.
+    
+```
+source shell-daddy.sh
+
+```
 
 ```
 . /path/to/shell-daddy.sh
@@ -51,7 +56,7 @@ good girl~
 daddy's so proud of you~ ❤️
 $ daddy ls
 README.md  shell-daddy.sh
-daddy thinks her little child earned a big hug~ ❤️
+daddy thinks his little child earned a big hug~ ❤️
 ```
 
 ## Usage
@@ -60,7 +65,7 @@ To use the `daddy` function, simply pass a command as an argument and `daddy` wi
 
 ```sh
 daddy ls
-# Output: Good girl! daddy's so proud of you! ❤️
+# Output: Good boy! daddy's so proud of you! ❤️
 
 daddy this-command-does-not-exist
 # Output: Just a little further, sweetie~ ❤️
