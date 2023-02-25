@@ -4,8 +4,8 @@
 daddy() (
   daddy_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-  # SHELL_daddyS_LITTLE - what to call you~ (default: "girl")
-  # SHELL_daddyS_PRONOUNS - what pronouns daddy will use for themself~ (default: "her")
+  # SHELL_daddyS_LITTLE - what to call you~ (default: "boy")
+  # SHELL_daddyS_PRONOUNS - what pronouns daddy will use for themself~ (default: "him")
   # SHELL_daddyS_ROLES - what role daddy will have~ (default "daddy")
 
   COLORS_LIGHT_PINK='\e[38;5;217m'
@@ -16,7 +16,7 @@ daddy() (
   DEF_WORDS_LITTLE="boy"
   DEF_WORDS_PRONOUNS="him"
   DEF_WORDS_ROLES="daddy"
-  DEF_daddy_COLOR="${COLORS_LIGHT_PINK}"
+  DEF_daddy_COLOR="${COLORS_LIGHT_BLUE}"
   DEF_ONLY_NEGATIVE="false"
 
   NEGATIVE_RESPONSES=(
